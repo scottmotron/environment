@@ -1,0 +1,1 @@
+vlog class_data_hiding.sv && vsim -c class_data_hiding -sv_seed random -do "run -all; quit"
