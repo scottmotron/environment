@@ -1,0 +1,1 @@
+find build -name 'sim.log' | xargs grep -l "UVM Report Summary" | xargs grep -L "Simulation PASSED"

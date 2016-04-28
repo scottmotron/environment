@@ -1,0 +1,3 @@
+setenv UVM_HOME_BACKUP $UVM_HOME
+cp -r /ln/app/mg/questasim/10.3b/questasim/verilog_src/uvm-1.1d .
+setenv UVM_HOME ${PWD}/uvm-1.1d

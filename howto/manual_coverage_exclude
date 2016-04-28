@@ -1,0 +1,10 @@
+../../../../bin/fcs/gen_exclude_dofile.py -e ../../../../top/sim/coverage_exclusions.lst -u build/merge.ucdb > exclude.do
+head -n -4 exclude.do > exclude.do.tmp
+/proj/longspeak/tools/mentor/10.2c_20131212/questasim/bin/vcover report -bydu build/merge.ucdb > bydu.inst.rpt
+cat bydu.inst.rpt | grep lsi_ | awk '{print "coverage exclude -du "$3}' >> exclude.do.tmp
+cat /proj/longspeak/jenkins/workspaces/TEMPORARY_EXCLUSIONS.do >> exclude.do.tmp
+echo "coverage exclude -srcfile dupfns.v" >> exclude.do.tmp
+tail -n 4 exclude.do >> exclude.do.tmp
+mv exclude.do.tmp exclude.do
+time /proj/longspeak/tools/mentor/10.2c_20131212/questasim/bin/vsim -c -do exclude.do
+/ln/app2/mg/questasim/10.2c/questasim/bin/vcover report -html -htmldir covhtmlreport_excluded build/merge-excluded.ucdb

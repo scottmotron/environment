@@ -1,0 +1,29 @@
+
+set prompt = "%m %c> "
+
+set filec autolist nobeep history=100
+setenv EDITOR vim
+
+unsetenv TERMCAP
+set autologout=0
+unlimit
+
+# Disable caps lock and num lock
+#xmodmap -e "clear lock"
+#xmodmap -e "clear mod2"
+
+# LSF setup
+source /lsf/conf/cshrc.lsf
+
+# Longspeak
+#module load projects/longspeak_prime
+
+#setenv DISPLAY ldcnxs01:1156.0
+source ~/.aliases
+
+# proxy configurations
+setenv http_proxy http://proxy:8080
+setenv https_proxy https://proxy:8080
+setenv ftp_proxy ftp://proxy:8080
+
+setenv DISPLAY ldcxls01:18

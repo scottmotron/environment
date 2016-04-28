@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/work/sahrens/sandboxes/modeling_clean/cachefabric/trunk/common/design'
+let g:netrw_dirhist_2='/work/sahrens/sandboxes/modeling/cachefabric/trunk/leaf/tb/vi_sessions'
+let g:netrw_dirhist_3='/work/sahrens/sandboxes/modeling/cachefabric/trunk/leaf/tb/vseq'

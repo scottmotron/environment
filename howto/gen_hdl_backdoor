@@ -1,0 +1,5 @@
+This magic formual can be used to extract hdl paths inside a CSV file.
+=IF(A24="","",CONCATENATE("u_rcl.rcl_csr_mrb.rcl_csr_reg.",IF(A24="R",B24,CONCATENATE(SUBSTITUTE(SUBSTITUTE(J23,"u_rcl.rcl_csr_mrb.rcl_csr_reg.",""),CONCATENATE("_",B23),""),CONCATENATE("_",B24),""))))
+
+where J24 is the starting cell
+

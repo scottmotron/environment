@@ -1,0 +1,1 @@
+make TEST=sec_random_test VSIM_OPTIONS="+uvm_set_verbosity=uvm_test_top.base_env_h.acm_bfm_h,_ALL_,UVM_MEDIUM,run" comp sim

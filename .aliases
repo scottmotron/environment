@@ -1,0 +1,45 @@
+# Helpful Shortcuts
+alias cd 'cd -p'
+alias ls 'ls --color -F'
+alias la 'ls --color -aF'
+alias ll 'ls --color -lFh'
+alias lal 'ls --color -laFh'
+alias grep 'grep -E --color'
+alias top 'top -M'
+alias fig 'find . -type f -print | xargs grep'
+alias check_vsim_lic 'lmstat -c $MGLS_LICENSE_FILE -f msimhdlsim'
+alias aliases 'cat ~/.aliases'
+
+# SVN aliases
+alias ls_sb 'svn list $LPPRIME_REPO/branches'
+alias make_sb 'svn cp -m \!:1 $LPPRIME_REPO/trunk $LPPRIME_REPO/branches/\!:2'
+alias get_sb 'svn co $LPPRIME_REPO/branches/\!:1'
+alias rm_sb 'svn rm -m \!:1 $LPPRIME_REPO/branches/\!:2'
+alias goto_sb 'svn switch $LPPRIME_REPO/branches/\!:1'
+alias update_sb 'svn merge $LPPRIME_REPO/trunk'
+alias resync_sb 'svn ci --message \"resync\"'
+alias svfind 'find . -type f -regex ".*\.\(c\|sv\|svh\|\v\|py\)" | xargs grep -H'
+alias propset 'svn propset svn:externals -F externals .'
+
+#  if [ -n "$1" ]; then rt=--remote-tab-silent; else rt=""; fi
+#  gvim --servername GVIM_SCOTTA_0 $rt $@ ;
+
+alias gv 'set args=\!* && eval "if ($args != "") then \\
+  gvim --servername GVIM_SCOTTA_0 --remote-tab-silent \!* \\
+else \\
+  gvim --servername GVIM_SCOTTA_0 \\
+endif"'
+
+alias gv1 'set args=\!* && eval "if ($args != "") then \\
+  gvim --servername GVIM_SCOTTA_1 --remote-tab-silent \!* \\
+else \\
+  gvim --servername GVIM_SCOTTA_1 \\
+endif"'
+
+alias gv2 'set args=\!* && eval "if ($args != "") then \\
+  gvim --servername GVIM_SCOTTA_2 --remote-tab-silent \!* \\
+else \\
+  gvim --servername GVIM_SCOTTA_2 \\
+endif"'
+
+alias kill_all_gvim 'ps -u sahrens | grep gvim | sed -e 's/^ *\([0-9]* \).*/\1/' | xargs kill'

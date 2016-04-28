@@ -1,0 +1,7 @@
+setenv SB_HIGH +uvm_set_verbosity=uvm_test_top.base_env_h.sec_sb_h,_ALL_,UVM_HIGH,run
+setenv SB_DEBUG +uvm_set_verbosity=uvm_test_top.base_env_h.sec_sb_h,_ALL_,UVM_DEBUG,run
+setenv TEST_HIGH +uvm_set_verbosity=uvm_test_top,_ALL_,UVM_HIGH,run
+setenv TEST_DEBUG +uvm_set_verbosity=uvm_test_top,_ALL_,UVM_DEBUG,run
+setenv ACM_HIGH +uvm_set_verbosity=uvm_test_top.base_env_h.acm_bfm_h,_ALL_,UVM_HIGH,run
+setenv ACM_DEBUG +uvm_set_verbosity=uvm_test_top.base_env_h.acm_bfm_h,_ALL_,UVM_DEBUG,run
+

@@ -1,0 +1,7 @@
+Here's how to extract the BitWise GUI html help to a directory for viewing.
+
+1) Copy com.duolog.socrates.ui.help.bitwise_*.jar from bitwise intall plugins dir to local directory
+2) Rename .jar to .zip
+3) Unzip
+4) cd into html directory
+5) source convert_toc_xml_to_html

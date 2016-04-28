@@ -1,0 +1,18 @@
+set test = `echo !make | grep -o -e "TEST=\S*" | sed -e 's/TEST=//'`
+if ( $test == "" ) then
+   echo "test not found. Defaulting to sec_basic_test"
+   set test = "sec_basic_test"
+else
+   echo "got test $test"
+endif
+
+set seed = `echo !make | grep -o -e "SEED=[0-9]*" | sed -e 's/SEED=//'`
+if ( $seed == "" ) then
+   echo "seed not found. Defaulting to 0"
+   set seed = "0"
+else
+   echo "got seed $seed"
+endif
+
+gvim build/$test/$seed/sim.log
+vsim build/$test/$seed/sim.wlf -do wave.do &

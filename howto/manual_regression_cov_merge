@@ -1,0 +1,4 @@
+xml2ucdb -datafields 'Section,Title,Description,Generate,Check,Cover,Link,Type,Weight,Goal,Owner,Regression Priority,Schedule Priority,Schedule Days' -format Excel ../tb/vplans/sec_vplan.xml build/vplan.ucdb
+vcover merge build/regression_merge.ucdb build/vplan.ucdb build/merge.ucdb
+vcover report -html build/regression_merge.ucdb
+
