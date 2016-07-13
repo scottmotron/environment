@@ -104,6 +104,8 @@ program class_data_hiding;
   A rand_test_a = new();
 
   test_struct_s ts;
+  bit x_bit;
+  logic x_logic;
 
   `define STRING "asdf.jkl"
   initial begin
@@ -155,6 +157,28 @@ program class_data_hiding;
 
     for(int ii = 0; ii < 10; ii++) $display("random number from 5 to 10: %0d", random_range(5,10));
     for(int ii = 0; ii < 10; ii++) $display("random number: %0d, %0d", $random(0), $random(1));
+
+    x_bit   = 1'bx;
+    x_logic = 1'bx;
+    if     (x_bit)    $display("if x_bit straigt up is true");
+    if    (!x_bit)    $display("if x_bit straigt up is false");
+    if (1'bx == x_bit)   $display("x_bit == 1'bx");
+    if (1'bx != x_bit)   $display("x_bit != 1'bx");
+    if (1'bx == 1'bx) $display("x == to x");
+    if (x_bit === 1'bx) $display("x_bit === to x");
+    if (x_bit !== 1'bx) $display("x_bit !== to x");
+
+    if     (x_logic)    $display("if x_logic straigt up is true");
+    if    (!x_logic)    $display("if not x_logic straigt up is false");
+    if (1'bx == x_logic)   $display("x_logic == 1'bx");
+    if (1'bx != x_logic)   $display("x_logic != 1'bx");
+    if (1'bx == 1'bx) $display("x == to x");
+    if (1'bx === 1'bx) $display("x === to x");
+    if (x_logic === 1'bx) $display("x_logic === to x");
+    if (x_logic !== 1'bx) $display("x_logic !== to x");
+    if (x_logic === 1'bz) $display("x_logic !== to z");
+    if (x_logic === 1'b0) $display("x_logic !== to 0");
+    if (x_logic === 1'b1) $display("x_logic !== to 1");
   end
 
   function int random_range(int low, int high);
